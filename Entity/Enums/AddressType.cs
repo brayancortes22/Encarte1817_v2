@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 namespace Entity.Enums
 {
     /// <summary>
-    /// Enum para tipos de vías o direcciones
+    /// Enum para tipos de vías
     /// </summary>
-    public enum AddressType
+    public enum StreetType
     {
         [Description("Calle")]
-        Street = 1,
+        Calle = 1,
 
         [Description("Carrera")]
-        Avenue = 2,
+        Carrera = 2,
 
         [Description("Transversal")]
         Transversal = 3,
@@ -28,48 +28,78 @@ namespace Entity.Enums
         Circular = 5,
 
         [Description("Autopista")]
-        Highway = 6,
+        Autopista = 6,
 
         [Description("Avenida")]
-        Boulevard = 7,
+        Avenida = 7,
 
         [Description("Km")]
-        Kilometer = 8,
+        Km = 8,
 
         [Description("Variante")]
-        Variant = 9,
+        Variante = 9,
 
-        [Description("Via")]
-        Road = 10,
+        [Description("Vía")]
+        Via = 10
+    }
 
-        [Description("Sector")]
-        Sector = 11,
+    /// <summary>
+    /// Enum para letras adicionales (A, B, C, etc.)
+    /// </summary>
+    public enum StreetLetter
+    {
+        [Description("")]
+        Ninguna = 0,
+        [Description("A")]
+        A = 1,
+        [Description("B")]
+        B = 2,
+        [Description("C")]
+        C = 3,
+        [Description("D")]
+        D = 4,
+        [Description("E")]
+        E = 5,
+        [Description("F")]
+        F = 6,
+        [Description("G")]
+        G = 7,
+        [Description("H")]
+        H = 8,
+        [Description("I")]
+        I = 9,
+        [Description("J")]
+        J = 10
+    }
 
-        [Description("Barrio")]
-        Neighborhood = 12,
-
-        [Description("Conjunto")]
-        Complex = 13,
-
-        [Description("Edificio")]
-        Building = 14,
-
-        [Description("Torre")]
-        Tower = 15,
-
+    /// <summary>
+    /// Enum para tipos de unidad residencial/comercial
+    /// </summary>
+    public enum UnitType
+    {
+        [Description("")]
+        Ninguno = 0,
+        [Description("Apto")]
+        Apartamento = 1,
         [Description("Casa")]
-        House = 16,
-
-        [Description("Apartamento")]
-        Apartment = 17,
-
+        Casa = 2,
         [Description("Local")]
-        Local = 18,
-
+        Local = 3,
         [Description("Oficina")]
-        Office = 19,
-
+        Oficina = 4,
         [Description("Bodega")]
-        Warehouse = 20
+        Bodega = 5,
+        [Description("Torre")]
+        Torre = 6,
+        [Description("Bloque")]
+        Bloque = 7,
+        [Description("Edificio")]
+        Edificio = 8,
+        [Description("Conjunto")]
+        Conjunto = 9,
+        [Description("Urbanización")]
+        Urbanizacion = 10,
+        [Description("Sector")]
+        Sector = 11
     }
 }
