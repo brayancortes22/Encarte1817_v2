@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="DDL\" />
-    <Folder Include="Model\Base\" />
   </ItemGroup>
 
   <ItemGroup>
