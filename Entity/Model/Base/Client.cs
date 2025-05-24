@@ -6,33 +6,31 @@ using System.Threading.Tasks;
 
 namespace Entity.Model.Base
 {
-    public class Person : BaseEntity
+    public class Client : BaseEntity
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string DocumentType { get; set; }
-        public string DocumentNumber { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Address { get; set; }
+        public string ClientCode { get; set; }
+        public string CompanyName { get; set; }
+        public string TaxId { get; set; }
+        public string Website { get; set; }
+        public string ContactEmail { get; set; }
+        public string ContactPhone { get; set; }
+        public string ShippingAddress { get; set; }
+        public decimal CreditLimit { get; set; }
+        public string PaymentTerms { get; set; }
+        public DateTime RegistrationDate { get; set; }
 
         // Foreign Keys
+        public int PersonId { get; set; }
         public int CountryId { get; set; }
         public int DepartmentId { get; set; }
         public int CityId { get; set; }
         public int NeighborhoodId { get; set; }
 
         // Navigation properties
+        public virtual Person? Person { get; set; }
         public virtual Country? Country { get; set; }
         public virtual Department? Department { get; set; }
         public virtual City? City { get; set; }
         public virtual Neighborhood? Neighborhood { get; set; }
-
-        // Related entities
-        public virtual Client? Client { get; set; }
-        public virtual Provider? Provider { get; set; }
-        public virtual Employee? Employee { get; set; }
     }
 }
-
-
-

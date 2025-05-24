@@ -6,33 +6,29 @@ using System.Threading.Tasks;
 
 namespace Entity.Model.Base
 {
-    public class Person : BaseEntity
+    public class Employee : BaseEntity
     {
-        public string FirstName { get; set; }
+        public string Name { get; set; }
         public string LastName { get; set; }
-        public string DocumentType { get; set; }
-        public string DocumentNumber { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Address { get; set; }
+        public string EmployeeCode { get; set; }
+        public string WorkSchedule { get; set; }
+        public bool IsActive { get; set; }
 
         // Foreign Keys
+        public int PersonId { get; set; }
         public int CountryId { get; set; }
         public int DepartmentId { get; set; }
         public int CityId { get; set; }
         public int NeighborhoodId { get; set; }
+        public int? SupervisorId { get; set; }
 
         // Navigation properties
+        public virtual Person? Person { get; set; }
         public virtual Country? Country { get; set; }
         public virtual Department? Department { get; set; }
         public virtual City? City { get; set; }
         public virtual Neighborhood? Neighborhood { get; set; }
-
-        // Related entities
-        public virtual Client? Client { get; set; }
-        public virtual Provider? Provider { get; set; }
-        public virtual Employee? Employee { get; set; }
+        public virtual Employee? Supervisor { get; set; }
+        public virtual ICollection<Employee>? Subordinates { get; set; }
     }
 }
-
-
-
