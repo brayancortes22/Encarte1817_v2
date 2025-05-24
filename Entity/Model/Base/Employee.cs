@@ -10,6 +10,7 @@ namespace Entity.Model.Base
     {
         public string Name { get; set; }
         public string LastName { get; set; }
+        
         public string EmployeeCode { get; set; }
         public string WorkSchedule { get; set; }
         public bool IsActive { get; set; }

@@ -13,7 +13,6 @@ namespace Entity.Model.Base
         public string DocumentType { get; set; }
         public string DocumentNumber { get; set; }
         public string PhoneNumber { get; set; }
-        public string Address { get; set; }
 
         // Foreign Keys
         public int CountryId { get; set; }

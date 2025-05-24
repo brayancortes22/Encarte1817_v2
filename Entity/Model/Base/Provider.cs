@@ -15,12 +15,9 @@ namespace Entity.Model.Base
         public string Website { get; set; }
         public string ContactEmail { get; set; }
         public string ContactPhone { get; set; }
-        public string Address { get; set; }
         public string ProductsServices { get; set; }
         public string PaymentTerms { get; set; }
-        public decimal Rating { get; set; }
-        public DateTime RegistrationDate { get; set; }
-        public bool IsActive { get; set; }
+        
         
         // Foreign Keys
         public int PersonId { get; set; }
