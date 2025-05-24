@@ -1,7 +1,7 @@
 ﻿using Entity.Dtos.Base;
 using System.ComponentModel.DataAnnotations;
 
-namespace Entity.Dtos.CountryDto
+namespace Entity.Dtos.CountryDTO
 {
     public class CountryDto : BaseDto
     {
