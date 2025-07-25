@@ -7,7 +7,7 @@ using Entity.Model.Base;
 
 namespace Entity.Model
 {
-    public class User : BaseEntity
+    public class User : BaseDTO
     {
         public  string Email { get; set; }
         public  string Password { get; set; }

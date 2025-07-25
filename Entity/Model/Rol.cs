@@ -7,7 +7,7 @@ using Entity.Model.Base;
 
 namespace Entity.Model
 {
-    public class Rol : BaseEntity
+    public class Rol : BaseDTO
     {
         public  string Name { get; set; }
         public  string Description { get; set; }

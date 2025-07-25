@@ -20,6 +20,8 @@ using FluentValidation.AspNetCore;
 using Business.Services;
 using Data.Implements.BaseDate;
 using Data.Implements.BaseData;
+using Data.Implements.PedidosData;
+using Data.Implements.PizzasData;
 
 
 
@@ -44,11 +46,6 @@ builder.Services.AddSwaggerDocumentation();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Configure email service
-builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("SmtpSettings"));
-
-builder.Services.AddScoped<IEmailService, EmailService>();
-builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 
 
 // Configure JWT
@@ -69,6 +66,16 @@ builder.Services.AddScoped<IUserBusiness, UserBusiness>();
 // Register Role-specific services
 builder.Services.AddScoped<IRolData, RolData>();
 builder.Services.AddScoped<IRolBusiness, RolBusiness>();
+
+builder.Services.AddScoped<IPedidosData, PedidosData>();
+builder.Services.AddScoped<IPedidosBusiness, PedidosBusiness>();
+
+builder.Services.AddScoped<IClientesData, ClienteData>();
+builder.Services.AddScoped<IClientesBusiness, ClientesBusiness>();
+
+builder.Services.AddScoped<IPizzasData, PizzasData>();
+builder.Services.AddScoped<IPizzasBusiness, PizzasBusiness>();
+
 
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IJwtService, JwtService>();

@@ -12,7 +12,7 @@ using static Dapper.SqlMapper;
 
 namespace Data.Implements.BaseData
 {
-    public class BaseModelData<T> : ABaseModelData<T> where T : BaseEntity
+    public class BaseModelData<T> : ABaseModelData<T> where T : BaseDTO
     {
         public BaseModelData(ApplicationDbContext context) : base(context)
         {

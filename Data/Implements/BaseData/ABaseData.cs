@@ -17,7 +17,7 @@ namespace Data.Implements.BaseDate
     /// Clase abstracta para poder sobre escribir métodos e incluir nuevos metodos sin cambiar la Interfaz
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class ABaseModelData<T> : IBaseModelData<T> where T : BaseEntity
+    public abstract class ABaseModelData<T> : IBaseModelData<T> where T : BaseDTO
     {
     
         protected readonly ApplicationDbContext _context;

@@ -15,7 +15,7 @@ namespace Data.Interfaces
     /// </summary>
     /// <typeparam name="T"></typeparam>
 
-    public interface IBaseModelData<T> where T : BaseEntity
+    public interface IBaseModelData<T> where T : BaseDTO
     {
         /// <summary>
         /// Método para obtener una entidad por su ID

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Business.Implements
 {
 
-    public abstract class ABaseBusiness<T, D> : IBaseBusiness<T, D> where T : BaseEntity where D : BaseDto
+    public abstract class ABaseBusiness<T, D> : IBaseBusiness<T, D> where T : BaseDTO where D : BaseDto
     {
 
 

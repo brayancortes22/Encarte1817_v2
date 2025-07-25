@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Business.Interfaces
 {
-    public interface IBaseBusiness<T, D> where T : BaseEntity where D : BaseDto
+    public interface IBaseBusiness<T, D> where T : BaseDTO where D : BaseDto
        
     {
         /// <summary>

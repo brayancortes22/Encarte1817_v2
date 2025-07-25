@@ -7,7 +7,7 @@ namespace Web.Controllers.Implements
 {
     [ApiController]
     public abstract class GenericController<TDto, TEntity> : ControllerBase
-    where TEntity : BaseEntity
+    where TEntity : BaseDTO
     where TDto : BaseDto
     {
         protected readonly IBaseBusiness<TEntity, TDto> _business;

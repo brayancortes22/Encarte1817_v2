@@ -26,7 +26,7 @@ namespace Business.Implements
     /// - Logging detallado de todas las operaciones
     /// - Manejo consistente de errores
     /// </remarks>
-    public class BaseBusiness<T, D> : ABaseBusiness<T, D> where T : BaseEntity where D : BaseDto
+    public class BaseBusiness<T, D> : ABaseBusiness<T, D> where T : BaseDTO where D : BaseDto
     {
 
         /// <summary>

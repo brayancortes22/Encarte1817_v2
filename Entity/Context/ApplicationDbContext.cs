@@ -26,6 +26,9 @@ namespace Entity.Context
         public DbSet<User> Users { get; set; }
         public DbSet<Rol> Roles { get; set; }
         public DbSet<RolUser> RolUsers { get; set; }
+        public DbSet<Clientes> Clientes { get; set; }
+        public DbSet<Pizzas> Pizzas { get; set; }
+        public DbSet<Pedidos> Pedidos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -42,10 +45,25 @@ namespace Entity.Context
                 .HasOne(ru => ru.Rol)
                 .WithMany(r => r.RolUsers)
                 .HasForeignKey(ru => ru.RolId);
-                
+
+
+
+            modelBuilder.Entity<Pedidos>()
+                .HasKey(ru => new { ru.ClienteId, ru.pizzasId }); // Clave compuesta
+
+            modelBuilder.Entity<Pedidos>()
+                .HasOne(ru => ru.Cliente)
+                .WithMany(u => u.Pedidos)
+                .HasForeignKey(ru => ru.ClienteId);
+
+           modelBuilder.Entity<Pedidos>()
+                .HasOne(ru => ru.Pizzas)
+                .WithMany(u => u.Pedidos)
+                .HasForeignKey(ru => ru.pizzasId);
+
             // Configuración para todas las entidades que heredan de BaseEntity
             foreach (var entityType in modelBuilder.Model.GetEntityTypes()
-                .Where(t => t.ClrType.IsSubclassOf(typeof(BaseEntity))))
+                .Where(t => t.ClrType.IsSubclassOf(typeof(BaseDTO))))
             {
                 // Configurar CreatedAt para que no sea nullable
                 modelBuilder.Entity(entityType.ClrType)
@@ -227,13 +245,13 @@ namespace Entity.Context
             ChangeTracker.DetectChanges();
             
             var entries = ChangeTracker.Entries()
-                .Where(e => e.Entity is BaseEntity);
+                .Where(e => e.Entity is BaseDTO);
 
             var currentDateTime = DateTime.UtcNow;
 
             foreach (var entry in entries)
             {
-                if (entry.Entity is BaseEntity entity)
+                if (entry.Entity is BaseDTO entity)
                 {
                     switch (entry.State)
                     {
